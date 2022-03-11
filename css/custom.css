@@ -1,0 +1,430 @@
+article,aside,details,figcaption,figure,footer,header,main,nav,section,summary { display:block;}
+audio,canvas,video {display:inline-block; *display:inline; *zoom:1; }
+ul, ol { list-style: none; }
+fieldset,img,input,button,textarea { border: none; outline-style: none; }
+​select,input,img,button,textarea { vertical-align: middle;}
+textarea { resize: none;}
+table {border-collapse:collapse;}
+ol,ul,dl { margin-bottom: 0;}
+p { margin-bottom: 0}
+body {
+    margin: 0;
+    padding: 0;
+}
+/* 时间轴（来自Volantis主题） */
+div[alt="timeline"] {
+    margin-top: 8px;
+    margin-left: 8px;
+}
+div[alt="timenode"] {
+    position: relative;
+}
+div[alt="timenode"]:after, div[alt="timenode"]:before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    background: rgba(68,215,182,.5);
+    width: 2px;
+    left: 7px;
+}
+div[alt="timenode"]:before {
+    top: 0px;
+    height: 6px;
+}
+div[alt="timenode"] div[alt="body"], div[alt="timenode"] div[alt="meta"] {
+    max-width: calc(100% - 24px);
+}
+div[alt="timenode"] div[alt="meta"] {
+    position: relative;
+    color: #1f2d3d;
+    line-height: 32px;
+    font-size: .8rem;
+    font-weight: 700;
+    margin: 0 0 0 24px;
+}
+div[alt="timenode"] div[alt="meta"]:after, div[alt="timenode"] div[alt="meta"]:before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    z-index: 2;
+    left: -24px;
+}
+div[alt="timenode"] div[alt="meta"]:before {
+    background: rgba(68,215,182,.5);
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+}
+div[alt="timenode"] div[alt="meta"]:after {
+    background: #44d7b6;
+    margin-left: 2px;
+    margin-top: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    -webkit-transform: scale(.5);
+    -moz-transform: scale(.5);
+    -o-transform: scale(.5);
+    -ms-transform: scale(.5);
+    transform: scale(.5);
+}
+div[alt="timenode"] div[alt="body"] {
+    margin: 4px 0 10px 24px;
+    padding: 10px;
+    border-radius: 12px;
+    background: #efeded;
+    display: inline-block;
+    font-size: .9rem;
+}
+div[alt="timenode"]:not(:last-child):after {
+    top: 26px;
+    height: calc(100% - 26px);
+}
+div[alt="timenode"]:last-child:after {
+    top: 26px;
+    height: calc(100% - 30px);
+}
+div[alt="timenode"]:hover div[alt="meta"]{
+    color:#444;
+}
+div[alt="timenode"]:hover div[alt="meta"]:before{
+    background:rgba(255,87,34,.5)
+}
+div[alt="timenode"]:hover div[alt="meta"]:after{
+    background:#ff5722;-webkit-transform:scale(1);
+    -moz-transform:scale(1);
+    -o-transform:scale(1);
+    -ms-transform:scale(1);
+    transform:scale(1);
+}
+
+/* 折叠框、视频、音频标签点击时候会出现黑色边框，极不美观，去除 */
+summary:focus {
+    outline: none !important;
+}
+video:focus{
+    outline: none !important;
+}
+audio:focus{
+    outline: none !important;
+}
+
+/** 折叠标签 **/
+details {
+    display: block;
+    padding: 16px;
+    margin: 1em 0;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 14px;
+    -webkit-transition: all .28s ease;
+    -moz-transition: all .28s ease;
+    -o-transition: all .28s ease;
+    -ms-transition: all .28s ease;
+    transition: all .28s ease;
+    -moz-transition: all .28s ease;
+    -webkit-transition: all .28s ease;
+    -o-transition: all .28s ease;
+    border: 1px solid #f6f6f6;
+}
+summary {
+    display: list-item;
+}
+
+details summary {
+    cursor: pointer;
+    padding: 16px;
+    margin: -16px;
+    border-radius: 4px;
+    color: rgba(68,68,68,.7);
+    font-size: .875rem!important;
+    font-weight: 700;
+    position: relative;
+    line-height: normal;
+}
+details>summary {
+    background: #ebf9ed;
+}
+details[open] {
+    border-color: #00c4b6;
+}
+details[open]>summary {
+    color: #444;
+    margin-bottom: 0;
+}
+details[open]>summary {
+    border-bottom: 1px solid #00c4b6;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+font {
+    display: inline;
+    padding: .2em .6em;
+    font-size: 90%;
+    font-weight: 400;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .1rem;
+    border-radius: 6px;
+    background-color: #e91e64;
+}
+
+font[title="red"] {
+    background-color:#e91e64;
+}
+font[title="blue"] {
+    background-color:#02aaf4;
+}
+font[title="yellow"] {
+    background-color:#ffc50a;
+}
+font[title="green"] {
+    background-color:#8bc34a;
+}
+font[title="gray"] {
+    background-color:#4c4c4c;
+}
+
+#viki-content {
+    letter-spacing: 2px;
+    background-image: linear-gradient(0deg,transparent 24%,rgba(201,195,195,.329) 25%,hsla(0,8%,80.4%,.05) 26%,transparent 27%,transparent 74%,hsla(0,5.2%,81%,.185) 75%,rgba(180,176,176,.05) 76%,transparent 77%,transparent),linear-gradient(90deg,transparent 24%,rgba(204,196,196,.226) 25%,hsla(0,4%,66.1%,.05) 26%,transparent 27%,transparent 74%,hsla(0,5.2%,81%,.185) 75%,rgba(180,176,176,.05) 76%,transparent 77%,transparent);
+    background-color: #fff;
+    background-size: 50px 50px;
+}
+
+#viki-content hr {
+    border: 0 none;
+    border-bottom: 2px  dashed #AAD6EC;
+}
+
+/* 引用块开始 */
+#viki-content blockquote {
+    padding: .5em 1em;
+    margin: 12px 0;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-left: 5px solid #5fa7e4;
+    background-color: #f4fcff;
+
+}
+
+#viki-content blockquote > blockquote {
+    border: 1px dashed rgba(95, 167, 228, .2);
+    border-left: 5px solid #5fa7e4;
+    margin-left: 2rem;
+} 
+
+/* 引用块结束 */
+
+/* 标记开始 */
+#viki-content mark {
+    color: #f00;
+    background-color: transparent;
+}
+/* 标记结束 */
+
+/** 有序、无序列表，来自 Butterfly 主题 **/
+#viki-content ul>li:before, #viki-content .ul>.li:before {
+    margin-left: -22px;
+    margin-top: 6px;
+    width: .62em;
+    height: .62em;
+    border: .1em solid #81accf;
+    border-radius: .31em;
+    background: 0 0;
+    content: '';
+    line-height: .42em;
+}
+
+#viki-content li:before {
+    position: absolute;
+    background: #81accf;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+#viki-content ol li:first-child {
+    counter-reset: li;
+}
+
+#viki-content li:hover:before {
+    -webkit-transform:rotate(360deg);
+    -moz-transform:rotate(360deg);
+    -o-transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    transform:rotate(360deg);
+}
+
+#viki-content ul>li:not(.tab):hover:before {
+    border-color: #81accf;
+}
+
+#viki-content ol>li:before {
+    margin-top: 3px;
+    margin-left: -25px;
+    width: 1.65em;
+    height: 1.65em;
+    border-radius: 0.825em;
+    content: counter(li);
+    counter-increment: li;
+    text-align: center;
+    font-size: .65em;
+    line-height: 1.7em;
+}
+
+/* 列表子项上下间隔调整 */
+#viki-content li * {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* 列表上下间隔调整 */
+#viki-content li {
+    margin: 7px 0;
+}
+
+/* 有序无序 结束 */
+
+pre {
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+}
+
+code {
+    color: #666;
+    font-family: "Monaco", "Hack", "Source Code Pro", "JetBrains Mono", "Consolas", monospace, Courier;
+    padding: 2px 4px;
+    margin: 0 5px;
+    border-radius: 2px;
+    font-size: 0.9rem;
+    /* background-color: #eee; */
+    box-shadow: 0 0 4px;
+    word-break: break-word;
+}
+
+pre code {
+    color: #ccc;
+    font-family: "Monaco", "Hack", "Source Code Pro", "JetBrains Mono", "Consolas", monospace, Courier;
+    border-left:0 none;
+}
+
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: #2d323b;
+}
+
+.hljs-comment {
+    color: #999;
+}
+
+.hljs-keyword,
+.hljs-attribute,
+.hljs-selector-tag,
+.hljs-meta-keyword,
+.hljs-doctag,
+.hljs-name {
+    color: #cc99cd;;
+}
+
+.hljs-type,
+.hljs-string,
+.hljs-number,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-quote,
+.hljs-template-tag,
+.hljs-deletion {
+    color: #f08d49;
+}
+
+.hljs-title,
+.hljs-section {
+    color: #f08d49;
+    font-weight: bold;
+}
+
+.hljs-regexp,
+.hljs-symbol,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+    color: #f8c555;
+}
+
+.hljs-literal {
+    color: #7ec699;
+}
+
+.hljs-built_in,
+.hljs-bullet,
+.hljs-code,
+.hljs-addition {
+  color: #008700;
+}
+
+img.viki-img-center {
+    margin-left: 0;
+}
+
+#viki-content a {
+    padding: 0 4px;
+    transition: .3s;
+    color: #1E6BBE;
+    text-decoration: none;
+}
+
+#viki-content a:hover {
+    border-radius:6px;
+    background-color: #81d8cf;
+    color:#ffffffe6;
+    cursor: pointer;
+}
+
+h1 p {
+    background-color: #00c4b6;
+    border-radius: 5px;
+    color: #fff;
+    padding-left: 20px;
+    box-shadow: 0 0 5px #000;
+}
+
+h2 p::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    background-size: 24px 24px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADGklEQVRYR81X32vTYBQ999s6mFjQgQ+DrbHiVFZYU4cDcQ/6pGhTFVYFEXGi82H+Bz448UnEF1Fx9ccEEcXpZE3d5tP2ooKiTacTHaLNpigMHDgnU9tcSbrWrkwWR0sbyEOSe885ObnfvV8IRT6oyPwoLQHBx+OVM5WJvSyEVAhnBOjt7yU/+/rr6r6l8TMO+F/EN0JQhICqQpD/xaRpcpAc9tS+M+9lBCia/oqBamK+zeDuQogQZaKJk3wcQjxSva7tGQGB2Ke1zIk3DNyMyNL+QpCnMQOaPsDAVuGAp9cjvbYc8Ec/bCYSg0zoiHilk1tHxqsqEsYlML4kjIpT/eurJxRNPweQU5VdrWaOEo1fgKAVbBgXIz73kF3R/ph+ghgdzMYWM29eAWlBJqgZaFlFYtC6nhWpaDqnSGlIlV1WjJ3DloDNgyNLncudqgX//Ucg3LxuStHGuhi8pqKCW3rqV342rwFjRznKm+/LNaN2yC237ThgF2wxcfMLeP6+ncrKzoPoKTGeLQbYbg4TNoC5iZPJY5HGVRdSNZAWYBclD3FzBQzrR8hACAKdzBzKA/4/IYioDQaOskBbpEG6PO8qKKSAEi3CnEb0Pw4oMf0OmKbTDWqh3Lw6EIiNBZi5lxh3wz4puBD5ovqAMvxhHSdFKxE1CQe3m/07TeTX4lcJdAhE+1Sv65Z5P/ByvIGTRowIZ9igbtXnmrOsbTvgj+kHBNMuBu9OdVw8EeU4nC1A0cYmAHZOTRrLhra4Z8ywnSN6vZHAFTA2WnnMfQB3qz73ddsOZM8CACFDIPSgQXqebXEgqgeZcAeEe6pXasm1f8ew3igMtAHWac0Uc/jYdyAaP0xEBwFsmgUPqbJ0NE2UKj4EGcahiOzuyhagaHpnmtgcVgTcCMuua7YdyAHbA3ArQNscVFbb4635aD6fnYaTvxxi9UNP7ddMXaRWVBdAcaLk6bDXPZCNZ9uBXEsDUX1T2Cc9yjig6Z0EHg3LK8/aqf6MwJKchkXfks1+0+JtSq3qLPa23BRR1B+T/6nkfMaW1r9hPt/MLtYfTLEpP+T9FNoAAAAASUVORK5CYII=);
+}
+
+h2 {
+    border-bottom: 4px solid #00c4b6;
+    padding-bottom: 6px;
+}
+
+h3 p {
+    padding-left: 10px;
+    border-left: 5px solid #00c4b6;
+}
+
+h4 p {
+    padding: 0 6px;
+    display: inline-block;
+    border: 1px solid #00c4b6;
+    border-top: 4px solid #00c4b6;
+}
